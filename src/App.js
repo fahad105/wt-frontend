@@ -1,6 +1,5 @@
 import React from 'react';
 import Upload from './upload/Upload'
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,9 +9,9 @@ function App() {
         Weight Tracker
       </header>
       <div className="uploadContainer">
-        {/* <Upload></Upload> */}
-        <Welcome name="function component"></Welcome>
-        <Welcome2 name="class component"></Welcome2> 
+        <Upload></Upload>
+        {/* <Welcome name="function component"></Welcome>
+        <Welcome2 name="class component"></Welcome2>  */}
 
       </div>
     </div>
@@ -20,15 +19,15 @@ function App() {
 }
 
 //Function component: a js function with props as parameter
-function Welcome(props){
-  return <h1>Hello, {props.name}</h1>
-}
-//ES6 Class equivalent: Class component
-class Welcome2 extends React.Component{
-  render(){
-    return <h1>Hello, {this.props.name}</h1>
-  }
-}
+// function Welcome(props){
+//   return <h1>Hello, {props.name}</h1>
+// }
+// //ES6 Class equivalent: Class component
+// class Welcome2 extends React.Component{
+//   render(){
+//     return <h1>Hello, {this.props.name}</h1>
+//   }
+// }
 
 
 export default App;
