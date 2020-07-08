@@ -1,21 +1,17 @@
 import React from 'react';
 import { BlobServiceClient } from '@azure/storage-blob'
 import './Upload.css';
+import keys from '../keys/keys.json'; //todo: this is not secure and should be changed for sure lmao, getSASToken in Azure Function, httpTrigger
 
 class Upload extends React.Component{
     constructor(props){
         super(props)
         this.state = {}
         this.fileInput = React.createRef();
-        this.onClickHandler = this.onClickHandler.bind(this);
-        this.onChangeHandler = this.onChangeHandler.bind(this);
     }
 
-    async onClickHandler(event){
-        console.log(this.state.selectedFile);
-        console.log(this.fileInput);
-        console.log("//////////////////////////")
-        //WORKS
+    onClickHandler = async (event) => {
+        console.log("clicked");
         if(this.state.selectedFile){
             const blobName = this.state.selectedFile.name;
             const blockBlobClient = this.containerClient.getBlockBlobClient(blobName);
@@ -28,10 +24,9 @@ class Upload extends React.Component{
         else{
             console.log("No file selected")
         }
-       
     }
     
-    onChangeHandler(event){
+    onChangeHandler = (event) => {
         console.log(event);
         console.log(event.target.files[0]);
         this.setState({"selectedFile": event.target.files[0]});
@@ -40,21 +35,20 @@ class Upload extends React.Component{
     componentDidMount(){
         console.log(this.state.selectedFile)
         //TODO: Move to env file, or better: create azure function to retrieve SAS token with short expiry
-        const account = "wtazurestorage";
-        const sas = "";
+        const account = keys.storageAccountName;
+        const sas = keys.sas;
         const blobServiceClient = new BlobServiceClient(`https://${account}.blob.core.windows.net${sas}`);
         this.containerClient = blobServiceClient.getContainerClient("images");
     }
 
     render() {
         return(
-            <>
-                <input type="file" name="file" className="uploadInput" onChange={this.onChangeHandler} ref={this.fileInput}/>
+            <div className="uploadContainer">
+                <input type="file" className="uploadInput" name="file" className="uploadInput" onChange={this.onChangeHandler} ref={this.fileInput}/>
                 <button className="uploadButton" onClick={this.onClickHandler}>Upload</button>
-            </>
+            </div>
         )
     }
-
 }
 
 export default Upload;

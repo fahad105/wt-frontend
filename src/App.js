@@ -8,12 +8,9 @@ function App() {
       <header className="App-header">
         Weight Tracker
       </header>
-      <div className="uploadContainer">
         <Upload></Upload>
         {/* <Welcome name="function component"></Welcome>
         <Welcome2 name="class component"></Welcome2>  */}
-
-      </div>
     </div>
   );
 }
