@@ -3,8 +3,7 @@
   background-color: #282c34;
   color: white;
   height:100vh;
-  padding-left:20%;
-  padding-right:20%;
+  width:100vw;
 }
 
 .App-header{
@@ -13,3 +12,7 @@
   padding-top:2vh;
 }
 
+.pageContent{
+padding-left:20%;
+padding-right:20%;
+}
