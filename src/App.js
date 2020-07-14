@@ -1,28 +1,38 @@
 import React from 'react';
-import Upload from './upload/Upload'
-import Dashboard from './dashboard/Dashboard';
+import PageContainer from './pageContainer/PageContainer'
 import Menu from './menu/Menu';
-
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        Weight Tracker
-      </header>
-      <nav>
-        <Menu></Menu>
-      </nav>
-      <section className="pageContent">
-        <Upload></Upload>
-        <Dashboard></Dashboard>
-      </section>
 
+class App extends React.Component {
 
-    </div>
-  );
+  constructor(props) {
+    super(props)
+    this.state = {activeComponent: "upload"}
+  }
+
+  activeComponentStateHandler = (menuValue) => {
+    this.setState({activeComponent: menuValue})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          Weight Tracker
+        </header>
+        <nav>
+          <Menu activeComponentStateHandler={this.activeComponentStateHandler}></Menu>
+        </nav>
+        <section className="pageContent">
+          <PageContainer activeComponent={this.state.activeComponent}/>
+        </section>
+      </div>
+    )
+  }
 }
+
+export default App;
 
 
 {/* <Welcome name="function component"></Welcome>
@@ -39,4 +49,3 @@ function App() {
 // }
 
 
-export default App;

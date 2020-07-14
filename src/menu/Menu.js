@@ -12,10 +12,12 @@ class Menu extends React.Component{
     }
 
     render() {
+        let handler = this.props.activeComponentStateHandler;
+
         return(
             <div className="menuContainer">
-                <button className="menuButton">Upload</button>
-                <button className="menuButton">Dashboard</button>
+                <button className="menuButton" onClick={() => handler("upload")}>Upload</button>
+                <button className="menuButton" onClick={() => handler("dashboard")}>Dashboard</button>
             </div>
         )
     }

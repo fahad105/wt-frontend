@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
-import keys from '../keys/keys.json'; //todo: this is not secure and should be changed for sure lmao, getSASToken in Azure Function, httpTrigger
+// import keys from '../keys/keys.json'; //todo: this is not secure and should be changed for sure lmao, getSASToken in Azure Function, httpTrigger
 
 class Dashboard extends React.Component{
     constructor(props){
@@ -15,7 +15,7 @@ class Dashboard extends React.Component{
     render() {
         return(
             <div className="dashboardContainer">
-                Hello
+                Dashboard
             </div>
         )
     }
