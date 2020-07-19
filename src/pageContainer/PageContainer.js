@@ -10,7 +10,6 @@ class PageContainer extends React.Component{
     }
        
     componentDidMount(){
-       console.log(this.props)
     }
 
     render() {

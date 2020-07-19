@@ -11,7 +11,6 @@ class Upload extends React.Component{
     }
 
     onClickHandler = async (event) => {
-        console.log("clicked");
         if(this.state.selectedFile){
             const blobName = this.state.selectedFile.name;
             const blockBlobClient = this.containerClient.getBlockBlobClient(blobName);
@@ -33,7 +32,6 @@ class Upload extends React.Component{
     }
        
     componentDidMount(){
-        console.log(this.state.selectedFile)
         //TODO: Move to env file, or better: create azure function to retrieve SAS token with short expiry
         const account = keys.storageAccountName;
         const sas = keys.sas;
