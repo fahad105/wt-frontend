@@ -10,7 +10,9 @@
     "azure-storage": "^2.10.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-vis": "^1.11.7",
+    "recharts": "^1.8.5"
   },
   "scripts": {
     "start": "react-scripts start",
