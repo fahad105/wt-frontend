@@ -1,17 +1,26 @@
 .uploadContainer{
     height:100px;
-    border:1px solid white;
     padding:20px;
 }
 
 .uploadInput{
     width:50%;
     margin-right:20px;
+    border:1px solid var(--complementary);
+    border-radius: 3px;
 }
 
 .uploadButton{
-    width:100px;
-    height:21px;
+    display:inline !important;
+    color:white;
+    background-color: var(--primary);
+    border: 1px solid var(--primary-dark);
+}
+
+.uploadButton:hover{
+    background-color:var(--complementary);
+    border-color:var(--complementary);
+    transition:linear all 150ms
 }
 
 /* TODO: Bunch of styling */

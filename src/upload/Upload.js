@@ -43,7 +43,7 @@ class Upload extends React.Component{
         return(
             <div className="uploadContainer">
                 <input type="file" className="uploadInput" name="file" className="uploadInput" onChange={this.onChangeHandler} ref={this.fileInput}/>
-                <button className="uploadButton" onClick={this.onClickHandler}>Upload</button>
+                <button className="uploadButton buttonBase" onClick={this.onClickHandler}>Upload</button>
             </div>
         )
     }

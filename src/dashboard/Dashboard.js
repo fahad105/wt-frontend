@@ -28,11 +28,11 @@ function EntryList(props) {
 
         return (
             <div>
-                <ul>
+                {/* <ul>
                     {props.entries.map((entry) => {
                         return <Entry key={entry.RowKey._} entry={entry}></Entry>
                     })}
-                </ul>
+                </ul> */}
 
                 <XYPlot
                     xType="time"
@@ -49,9 +49,10 @@ function EntryList(props) {
 
                     <LineMarkSeries
                         strokeWidth={2}
+                        stroke={'#e6b56c'} //complementary, this should be retrieved from css somehow. 
                         data={data}
                         curve={'curveMonotoneX'}
-                        fill={1}
+                        fill={'#e6b56c'}
                     />
                 </XYPlot>
             </div>

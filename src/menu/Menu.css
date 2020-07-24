@@ -1,20 +1,23 @@
 .menuContainer{
     /* todo: this is duplicate, find a way to structure shared css in files*/
-    border:1px solid white;
     width:20%;
     float:left;
     height:50%;
     display:block;
+    padding: 10px 0 0 20px;
 }
 
 .menuContainer::after{
     clear:both;
 }
 
-.menuButton{
-    width:100px;
-    height:21px;
-    /* todo: this is duplicate, find a way to structure shared css in files*/
+.menuButton{   
+    color:white;
+    background-color: var(--primary-dark);
+    border:1px solid var(--primary);
+    margin:10px 0;
+}
 
-    display:block;
+.menuButton:active{
+    border-color: var(--primary-dark);
 }

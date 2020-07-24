@@ -16,3 +16,18 @@
 padding-left:20%;
 padding-right:20%;
 }
+
+:root{
+  --primary: #6c9ce6;
+  --primary-dark: #546bb1;
+  --complementary: #e6b56c;
+}
+
+.buttonBase{
+  width:100px;
+  height:30px;
+  display:block;
+  outline:none;
+  border-radius:5px;
+  cursor:pointer;
+}
